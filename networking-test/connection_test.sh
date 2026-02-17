@@ -1,17 +1,12 @@
 #!/bin/bash
 
-
-# -- Configuration --
-SERVER_IP="172.19.76.54"
-SERVER_PORT="8000"
-LOG_DIR="/home/roberto-dev/BashProject/networking-test"
-LOG_FILE="${LOG_DIR}/network.log"
+source ./config.sh
 
 # -- Create log file --
 mkdir -p "$LOG_DIR" && touch "$LOG_FILE"
 echo "Log file located at: $LOG_FILE"
 
-TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+TIMESTAMP=$(date "$DATE_FORMAT")
 
 # -- Curl to server --
 # -o /dev/null = no html saved
